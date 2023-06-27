@@ -2,6 +2,11 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ConfirmController;
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\FinishController;
+use App\Http\Controllers\ListController;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
