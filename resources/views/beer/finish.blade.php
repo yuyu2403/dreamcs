@@ -12,6 +12,7 @@
     <title>注文完了画面</title>
 </head>
 <body>
-
+<h2>購入完了しました。お楽しみに！！</h2>
+<a href="/Index">トップページへ戻る</a>
 </body>
 </html>
