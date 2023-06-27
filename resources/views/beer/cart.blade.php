@@ -13,6 +13,7 @@
     <a href="/list">一覧画面へ</a><br>
 </head>
 <body>
+<h2>カートの中身</h2>
 
 </body>
 </html>
