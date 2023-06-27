@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 
 
-class IndexController extends Controller
+class FinishController extends Controller
 {
     //
 }
