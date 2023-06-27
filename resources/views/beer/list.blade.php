@@ -10,7 +10,7 @@
 <a href="/list">一覧画面へ</a><br>
 <a href="/cart">買い物カートへ</a><br>
 <form action="/beer/list" method="get">
-    <input type="text" name="search" value="{{$keyword}}">
+    <input type="text" name="search" value="{{$keyword}}" placeholder="検索したいこと入れてね♡">
     <input type="submit" value="検索">
 </form>
 
