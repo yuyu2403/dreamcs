@@ -10,6 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>注文完了画面</title>
+
+    <a href="/list">一覧画面へ</a><br>
+    <a href="/cart">買い物カートへ</a><br>
 </head>
 <body>
 <h2>購入完了しました。お楽しみに！！</h2>
