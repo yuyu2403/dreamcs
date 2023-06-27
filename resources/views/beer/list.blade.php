@@ -6,6 +6,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<a href="/list">一覧画面へ</a><br>
+<a href="/cart">買い物カートへ</a><br>
+<form action="/beer/list" method="get">
+    <input type="text" name="search" value="検索">
+</form>
+
     <title>Beer Shop</title>
     <style>
         .product {
