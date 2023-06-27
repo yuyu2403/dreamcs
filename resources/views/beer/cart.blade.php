@@ -12,6 +12,7 @@
     <title>カートの中身</title>
 </head>
 <body>
+<h2>カートの中身</h2>
 
 </body>
 </html>
