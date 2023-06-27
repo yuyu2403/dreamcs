@@ -34,9 +34,6 @@ Route::get('/rena', function () {
     return view('rena');
 });
 
-Route::get('/rena', function () {
-    return view('rena');
-});
 
 
 Route::get('/cart', function () {

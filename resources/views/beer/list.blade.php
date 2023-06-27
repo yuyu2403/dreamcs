@@ -47,8 +47,27 @@
                 'description' => 'Description of Beer 3',
                 'price' => 29.99,
                 'image' => 'ebisu.jpg',
+            ],
+            [
+                'name' => 'Beer 4',
+                'description' => 'Description of Beer 4',
+                'price' => 29.99,
+                'image' => 'puremoru.jpg',
+            ],
+            [
+                'name' => 'Beer 5',
+                'description' => 'Description of Beer 5',
+                'price' => 29.99,
+                'image' => 'supadora.jpg',
+            ],
+            [
+                'name' => 'Beer 6',
+                'description' => 'Description of Beer 6',
+                'price' => 29.99,
+                'image' => 'jyugon.jpg',
             ]
         ];
+
 
         // 商品リストを表示
         foreach ($products as $product) {
