@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 </head>
 <body>
-<h2></h2>
+<h2>beerlist</h2>
+
+<div>
+
+</div>
 </body>
 </html>
