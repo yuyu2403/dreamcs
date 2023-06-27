@@ -33,6 +33,32 @@ require __DIR__ . '/auth.php';
 Route::get('/rena', function () {
     return view('rena');
 });
+
+Route::get('/rena', function () {
+    return view('rena');
+});
+
+
+Route::get('/cart', function () {
+    return view('beer/cart');
+});
+
+Route::get('/confirm', function () {
+    return view('beer/confirm');
+});
+
+Route::get('/finish', function () {
+    return view('beer/finish');
+});
+
+Route::get('/index', function () {
+    return view('beer/index');
+});
+
+Route::get('/list', function () {
+    return view('beer/list');
+});
+
 Route::get('/index', function () {
     return view('beer/index');
 });
