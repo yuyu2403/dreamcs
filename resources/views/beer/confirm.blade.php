@@ -11,8 +11,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>注文確認画面</title>
 
-    <a href="/list">一覧画面へ</a><br>
-    <a href="/cart">買い物カートへ</a><br>
+    <a href="/list"><button type="button">一覧画面へ</button></a>
+    <a href="/cart"><img src="/images/cart.png" alt="買い物カートの画像"></a><form action="/beer/list" method="get">
+
 </head>
 <body>
 <p>注文内容確認</p>
