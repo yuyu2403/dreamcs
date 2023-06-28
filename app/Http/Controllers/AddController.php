@@ -9,16 +9,10 @@ use App\Models\Category;
 
 class AddController extends Controller
 {
-<<<<<<< HEAD
-    //
-    public function add(Request $request, $category_id)
-=======
-
     public function add()
->>>>>>> origin/main
     {
-        $all_categorys = Category::all();
-        return view('beer.add');
+        $all_categories = Category::all();
+        return view('beer.add', compact('all_categories'));
     }
 
     public function addconfirm(Request $request)
@@ -34,7 +28,7 @@ class AddController extends Controller
 
             'stock'  => ['required'],
 
-            'category'  => ['required']
+            'category_id'  => ['required']
         ]);
 
         if ($request->has('back')) {
