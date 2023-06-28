@@ -32,7 +32,7 @@
     </li>
 <li>
         カテゴリー：
-        <p>{{$request->category}}</p>
+        <p>{{$category->name}}</p>
     </li>
     <li>
         ビール画像：

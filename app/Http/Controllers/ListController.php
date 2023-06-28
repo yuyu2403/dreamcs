@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Models\UploadImage;
 use App\Models\Item;
+use App\Models\Contact;
 use App\Models\Cart;
 use App\Models\Category;
 use App\Models\User;
@@ -42,14 +43,14 @@ class ListController extends Controller
 
     public function list(Request $request)
     {
-
+        $items = Item::all();
         $query = Item::query();
         if (!empty($request)) {
             $search = $request->search;
             $query->where('name', 'LIKE', "%{$search}%");
         }
         $all_items = $query->get();
-        return view('beer.list', compact('all_items', 'search'));
+        return view('beer.list', compact('items', 'all_items', 'search'));
 
         // return view('beer.list', ['products' => $products]);
     }
