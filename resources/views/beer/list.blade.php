@@ -44,6 +44,8 @@
                 <p>{{ $contact->detail }}</p>
                 <p>{{ $contact->category }}</p>
                 <p>Price: &#165;{{ $contact->detail }}</p>
+                <form action="beer/cart" method="post">
+                </form>
                 </div>
 @endforeach
 
