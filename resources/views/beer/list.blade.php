@@ -24,7 +24,7 @@
 </head>
 <body>
 <a href="/list">一覧画面へ</a><br>
-<a href="/cart">買い物カートへ</a><br>
+<a href="/cart"><img src="/images/cart.png" alt="買い物カートの画像"></a><form action="/beer/list" method="get">
 <form action="/beer/list" method="get">
     <input type="text" name="search"
     {{-- value="{{$keyword}}"  --}}
