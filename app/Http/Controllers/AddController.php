@@ -9,13 +9,10 @@ use App\Models\Category;
 
 class AddController extends Controller
 {
-<<<<<<< HEAD
+
     //
     public function add(Request $request, $category_id)
-=======
 
-    public function add()
->>>>>>> origin/main
     {
         $all_categorys = Category::all();
         return view('beer.add');
