@@ -15,13 +15,13 @@ class AddconfirmController extends Controller
         // dd($request->all());
 
         $this->validate($request, [
-            'name' => ['required', 'min:2', 'max:100'],
+            'name' => ['required', 'min:2'],
 
-            'tel'  => ['required'],
+            'detail'  => ['required'],
 
-            'address'  => ['required'],
+            'price'  => ['required'],
 
-            'point'  => ['required']
+            'stock'  => ['required']
         ]);
         if ($request->has('back')) {
             return redirect('/MessageBoard')->withInput();
@@ -32,15 +32,15 @@ class AddconfirmController extends Controller
 
             /* リクエストで渡された値を設定する */
             $new_contact->name = $request->name;
-            $new_contact->tel = $request->tel;
-            $new_contact->address = $request->address;
-            $new_contact->point = $request->point;
+            $new_contact->detail = $request->detail;
+            $new_contact->price = $request->price;
+            $new_contact->stock = $request->stock;
             /* データベースに保存 */
             $new_contact->save();
 
             /* 完了画面を表示する */
-            return redirect('/MessageBoard/complete');
+            return redirect('/beer/list');
         }
-        return view('MessageBoard.confirm', compact('request'));
+        return view('beer.confirm', compact('request'));
     }
 }
