@@ -16,37 +16,37 @@
 
 </head>
 <body>
-<p>注文内容確認</p>
+<p>新商品確認</p>
 
 <ul>
     <li>
-        品名：
+        商品名：
         <p>{{$request->name}}</p>
     </li>
     <li>
+        説明・詳細：
+        <p>{{$request->detail}}</p>
+    </li>
+    <li>
         価格：
-        <p>{{$request->tel}}</p>
+        <p>{{$request->price}}</p>
     </li>
     <li>
-        数量：
-        <p>{{$request->address}}</p>
+        在庫：
+        <p>{{$request->stock}}</p>
     </li>
     <li>
-        住所：
-        <p>{{$request->point}}</p>
-    </li>
-    <li>
-        メールアドレス：
-        <p>{{$request->point}}</p>
+        ビール画像：
+        <p>{{$request->image}}</p>
     </li>
 </ul>
 
 <form action="" method="post">
 <input type="hidden" name="name" value="{{$request->name}}">
-<input type="hidden" name="tel" value="{{$request->tel}}">
-<input type="hidden" name="address" value="{{$request->address}}">
-<input type="hidden" name="point" value="{{$request->point}}">
-<input type="hidden" name="point" value="{{$request->point}}">
+<input type="hidden" name="detail" value="{{$request->detail}}">
+<input type="hidden" name="price" value="{{$request->price}}">
+<input type="hidden" name="stock" value="{{$request->stock}}">
+<input type="hidden" name="image" value="{{$request->image}}">
 <div>
 <button class="btn btn-primary" type="submit" name="back" >
    <i class="fa-solid fa-caret-left"></i>戻る</button>

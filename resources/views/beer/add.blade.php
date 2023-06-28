@@ -42,6 +42,7 @@
     <span class="error">{{$errors -> first('stock')}}</span>
     @endif
 </div>
+
 <div>
             <label for="image">
                 <p>ビール画像</p>
