@@ -38,12 +38,16 @@
 
         {{-- 商品リストを表示 --}}
             @foreach ($contacts as $contact)
+            <form action="beer/cart" method="post">
                 <div class='contact'>
                 <img src="images/{{ $contact->image }}" alt="{{ $contact->image }}" />
                 <h3>{{ $contact->name }}</h3>
                 <p>{{ $contact->detail }}</p>
                 <p>{{ $contact->category }}</p>
                 <p>Price: &#165;{{ $contact->detail }}</p>
+                <input type="submit" value="購入">
+                @csrf
+                </form>
                 </div>
 @endforeach
 
