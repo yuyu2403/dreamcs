@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>カートの中身</title>
-    <a href="/list">一覧画面へ</a><br>
+    <a href="/list"><button type="button">一覧画面へ</button></a>
     <form action="/login" method="get">
     <button type="submit">ログイン</button>
 </head>

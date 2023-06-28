@@ -28,13 +28,14 @@
     </style>
 </head>
 <body>
-<a href="/list">一覧画面へ</a><br>
-<a href="/cart">買い物カートへ</a><br>
-<form action="/beer/list" method="get">
+<form action="/login" method="get">
+    <button type="submit">ログイン</button>
+</form>
     <input type="text" name="search"
     {{-- value="{{$keyword}}"  --}}
     placeholder="検索したいこと入れてね♡">
     <input type="submit" value="検索">
+
 </form>
 
 <form action="/login" method="get">
@@ -66,6 +67,11 @@
 
 
 {{-- <div class="container">
+
+    <a href="/cart"><img src="/images/cart.png" alt="買い物カートの画像"></a><form action="/beer/list" method="get">
+
+<div class="container">
+
     <div id="product-list">
 
         // 商品データの配列

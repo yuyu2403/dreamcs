@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AddController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UploadImageController;
 
@@ -60,9 +61,10 @@ Route::get('/finish', function () {
     return view('beer/finish');
 });
 
-Route::get('/index', function () {
-    return view('beer/index');
-});
+Route::get(
+    '/add',
+    [AddController::class, 'add']
+);
 
 Route::get('/list', function () {
     return view('beer/list');
