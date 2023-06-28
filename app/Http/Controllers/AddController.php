@@ -37,7 +37,6 @@ class AddController extends Controller
             return redirect('/add')->withInput();
         }
 
-
         if ($request->has('send')) {
             /* Contact モデルのオブジェクトを作成 */
             $new_item = new Item();
@@ -54,6 +53,6 @@ class AddController extends Controller
             /* 完了画面を表示する */
             return redirect('/beer/list');
         }
-        return view('beer.confirm', compact('request'));
+        return view('beer.addconfirm', compact('request'));
     }
 }

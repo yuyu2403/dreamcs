@@ -13,7 +13,7 @@
 @endforeach
 
     <h2>新商品の追加</h2>
-<form action="/addconfirm" method="GET" enctype="multipart/form-data">
+<form action="/addconfirm" method="POST" enctype="multipart/form-data">
 <div>
         <label for="name">商品名</label>
         <input type="text" name="name" id="name"value="{{old('name')}}">
