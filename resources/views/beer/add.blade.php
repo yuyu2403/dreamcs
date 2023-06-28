@@ -12,7 +12,7 @@
 <li><span class="error">{{$error}}</span></li>
 @endforeach
     <h2>新商品の追加</h2>
-<form action="/beer/list" method="GET">
+<form action="/beer/list" method="GET" enctype="multipart/form-data">
 <div>
         <label for="name">商品名</label>
         <input type="text" name="name" id="name"value="{{old('name')}}">
@@ -22,7 +22,7 @@
 </div>
 <div>
         <label for="detail">説明・詳細</label>
-        <textarea name="detail" id="detail" value="{{old('detail')}}" cols="30" rows="10"></textarea>
+        <textarea name="detail" id="detail" value="{{old('detail')}}" cols="15" rows="1"></textarea>
     @if ($errors -> has('detail'))
     <span class="error">{{$errors -> first('detail')}}</span>
     @endif
@@ -41,6 +41,12 @@
     @if ($errors -> has('stock'))
     <span class="error">{{$errors -> first('stock')}}</span>
     @endif
+</div>
+<div>
+            <label for="image">
+                <p>ビール画像</p>
+                <input id="image" type="file" name="image">
+            </label>
 </div>
 
 <div>
