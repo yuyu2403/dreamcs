@@ -11,11 +11,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>注文完了画面</title>
 
-    <a href="/list">一覧画面へ</a><br>
-    <a href="/cart">買い物カートへ</a><br>
+    <a href="/list"><button type="button">一覧画面へ</button></a><br>
+    <a href="/cart"><img src="/images/cart.png" alt="買い物カートの画像"></a><form action="/beer/list" method="get">
 </head>
 <body>
 <h2>購入完了しました。お楽しみに！！</h2>
-<a href="/Index">トップページへ戻る</a>
+<a href="/list">トップページへ戻る</a>
 </body>
 </html>
