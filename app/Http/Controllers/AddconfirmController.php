@@ -1,46 +1,48 @@
-<?php
+ <?php
 
-namespace App\Http\Controllers;
+    namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+    use App\Models\Item;
+    use Illuminate\Http\Request;
 
 
 
 
-class AddconfirmController extends Controller
-{
-    //
-    public function addconfirm(Request $request)
-    {
-        // dd($request->all());
+// class AddconfirmController extends Controller
+// {
 
-        $this->validate($request, [
-            'name' => ['required', 'min:2'],
+//     public function addconfirm(Request $request)
+//     {
 
-            'detail'  => ['required'],
+//         $this->validate($request, [
+//             'name' => ['required', 'min:2'],
 
-            'price'  => ['required'],
+//             'detail'  => ['required'],
 
-            'stock'  => ['required']
-        ]);
-        if ($request->has('back')) {
-            return redirect('/MessageBoard')->withInput();
-        }
-        if ($request->has('send')) {
-            /* Contact モデルのオブジェクトを作成 */
-            $new_contact = new Contact();
+//             'price'  => ['required'],
 
-            /* リクエストで渡された値を設定する */
-            $new_contact->name = $request->name;
-            $new_contact->detail = $request->detail;
-            $new_contact->price = $request->price;
-            $new_contact->stock = $request->stock;
-            /* データベースに保存 */
-            $new_contact->save();
+//             'stock'  => ['required'],
 
-            /* 完了画面を表示する */
-            return redirect('/beer/list');
-        }
-        return view('beer.confirm', compact('request'));
-    }
-}
+//             'category'  => ['required']
+//         ]);
+
+//         if ($request->has('back')) {
+//             return redirect('/add')->withInput();
+//         }
+
+
+//         if ($request->has('send')) {
+//             $new_item = new Item();
+
+//             $new_item->name = $request->name;
+//             $new_item->detail = $request->detail;
+//             $new_item->price = $request->price;
+//             $new_item->stock = $request->stock;
+//             $new_item->category_id = $request->category;
+//             $new_item->save();
+
+//             return redirect('/beer/list');
+//         }
+//         return view('beer.confirm', compact('request'));
+//     }
+// }
