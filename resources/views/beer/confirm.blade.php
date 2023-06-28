@@ -49,14 +49,15 @@
 <input type="hidden" name="point" value="{{$request->point}}">
 <div>
 <button class="btn btn-primary" type="submit" name="back" >
-   <i class="fa-solid fa-caret-left"></i>戻る</button>
+   <i class="fa-solid fa-caret-left"></i>戻る
+</button>
 
 </div>
 <div>
-      <button class="btn btn-primary" type="submit" name="send">
+    <button class="btn btn-primary" type="submit" name="send">
             送信
             <i class="fa-solid fa-caret-right"></i>
-        </button>
+    </button>
 </div>
 @csrf
 </form>

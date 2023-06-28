@@ -12,7 +12,7 @@
 <li><span class="error">{{$error}}</span></li>
 @endforeach
     <h2>新商品の追加</h2>
-<form action="/beer/list" method="GET" enctype="multipart/form-data">
+<form action="/addconfirm" method="GET" enctype="multipart/form-data">
 <div>
         <label for="name">商品名</label>
         <input type="text" name="name" id="name"value="{{old('name')}}">
@@ -52,6 +52,12 @@
 
 <div>
         <input type="submit" value="送信">
+</div>
+<div>
+    @foreach($all_category as $category)
+        <input type="radio" name="category_id" value="{{ $category->id}}">
+        {{$category->name}}
+    @endforeach
 </div>
     @csrf
 </form>
