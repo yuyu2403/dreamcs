@@ -64,7 +64,10 @@ Route::get(
     '/add',
     [AddController::class, 'add']
 );
-
+Route::post(
+    '/confirm',
+    [FinishController::class, 'confirm']
+);
 Route::post(
     '/addconfirm',
     [AddController::class, 'addconfirm']
