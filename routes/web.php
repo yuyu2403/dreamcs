@@ -54,9 +54,9 @@ Route::get('/cart', function () {
     return view('beer/cart');
 });
 
-Route::get('/confirm', function () {
-    return view('beer/confirm');
-});
+// Route::get('/confirm', function () {
+//     return view('beer/confirm');
+// });
 
 Route::get('/finish', function () {
     return view('beer/finish');

@@ -11,6 +11,7 @@
     @foreach ($errors->all() as $error)
 <li><span class="error">{{$error}}</span></li>
 @endforeach
+
     <h2>新商品の追加</h2>
 <form action="/addconfirm" method="GET" enctype="multipart/form-data">
 <div>
@@ -21,8 +22,17 @@
     @endif
 </div>
 <div>
+    @foreach($all_categories as $category)
+        <input type="radio" name="category_id" value="{{ $category->id}}">
+        {{$category->name}}
+        @if ($errors -> has('category_id'))
+        <span class="error">{{$errors -> first('catedory_id')}}</span>
+        @endif
+    @endforeach
+</div>
+<div>
         <label for="detail">説明・詳細</label>
-        <textarea name="detail" id="detail" value="{{old('detail')}}" cols="15" rows="1"></textarea>
+        <textarea name="detail" id="detail" cols="15" rows="1">{{old('detail')}}</textarea>
     @if ($errors -> has('detail'))
     <span class="error">{{$errors -> first('detail')}}</span>
     @endif
@@ -53,12 +63,7 @@
 <div>
         <input type="submit" value="送信">
 </div>
-<div>
-    @foreach($all_category as $category)
-        <input type="radio" name="category_id" value="{{ $category->id}}">
-        {{$category->name}}
-    @endforeach
-</div>
+
     @csrf
 </form>
 </body>
