@@ -37,4 +37,9 @@ class ListController extends Controller
         $contacts = $query->get();
         return view('beer.list', compact('contacts', 'keyword'));
     }
+
+    public function list(Request $request){
+        return view('beer.list', ['products' => $products]);
+    }
+
 }
