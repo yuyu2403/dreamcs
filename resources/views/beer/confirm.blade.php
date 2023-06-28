@@ -19,34 +19,44 @@
 <p>注文内容確認</p>
 
 <ul>
+@foreach ($items as $item)
     <li>
         品名：
-        <p>{{$request->name}}</p>
+        <p>{{ $item['name'] }}</p>
     </li>
     <li>
         価格：
-        <p>{{$request->tel}}</p>
+        <p>{{ $item['price'] }}</p>
     </li>
     <li>
         数量：
-        <p>{{$request->address}}</p>
+        <p>{{ $item['num'] }}</p>
     </li>
+    @endforeach
+    <li>
+            個数の合計：
+            <p>{{ $totalQuantity }}</p>
+        </li>
+        <li>
+            合計金額：
+            <p>{{ $totalPrice }}</p>
+        </li>
     <li>
         住所：
-        <p>{{$request->point}}</p>
+        <p>{{$request->adress}}</p>
     </li>
     <li>
         メールアドレス：
-        <p>{{$request->point}}</p>
+        <p>{{$request->email}}</p>
     </li>
 </ul>
 
 <form action="" method="post">
 <input type="hidden" name="name" value="{{$request->name}}">
-<input type="hidden" name="tel" value="{{$request->tel}}">
-<input type="hidden" name="address" value="{{$request->address}}">
-<input type="hidden" name="point" value="{{$request->point}}">
-<input type="hidden" name="point" value="{{$request->point}}">
+<input type="hidden" name="price" value="{{$request->price}}">
+<input type="hidden" name="num" value="{{$request->num}}">
+<input type="hidden" name="adress" value="{{$request->adress}}">
+<input type="hidden" name="point" value="{{$request->email}}">
 <div>
 <button class="btn btn-primary" type="submit" name="back" >
    <i class="fa-solid fa-caret-left"></i>戻る
