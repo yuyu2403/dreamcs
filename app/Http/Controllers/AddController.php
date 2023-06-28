@@ -21,6 +21,7 @@ class AddController extends Controller
     {
         // dd($request->all());
 
+        $category = Category::find($request->category_id);
         $this->validate($request, [
             'name' => ['required', 'min:2'],
 
@@ -53,6 +54,6 @@ class AddController extends Controller
             /* 完了画面を表示する */
             return redirect('/beer/list');
         }
-        return view('beer.addconfirm', compact('request'));
+        return view('beer.addconfirm', compact('request', 'category'));
     }
 }

@@ -37,19 +37,19 @@
 
 
         {{-- 商品リストを表示 --}}
-            @foreach ($contacts as $contact)
+        @foreach ($items as $item)
             <form action="beer/cart" method="post">
-                <div class='contact'>
-                <img src="images/{{ $contact->image }}" alt="{{ $contact->image }}" />
-                <h3>{{ $contact->name }}</h3>
-                <p>{{ $contact->detail }}</p>
-                <p>{{ $contact->category }}</p>
-                <p>Price: &#165;{{ $contact->detail }}</p>
+                <div class='item'>
+                <img src="images/{{ $item->image }}" alt="{{ $item->image }}" />
+                <h3>{{ $item->name }}</h3>
+                <p>{{ $item->detail }}</p>
+                <p>{{ $item->category }}</p>
+                <p>Price: &#165;{{ $item->detail }}</p>
                 <input type="submit" value="購入">
                 @csrf
                 </form>
                 </div>
-@endforeach
+        @endforeach
 
 
     </div>
