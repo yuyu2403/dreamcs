@@ -4,6 +4,7 @@ use App\Http\Controllers\AddController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UploadImageController;
 
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ConfirmController;
 use App\Http\Controllers\IndexController;
@@ -65,9 +66,10 @@ Route::get(
     '/add',
     [AddController::class, 'add']
 );
+
 Route::get(
     '/addconfirm',
-    [AddconfirmController::class, 'addconfirm']
+    [AddController::class, 'addconfirm']
 );
 
 Route::get('/list', function () {
