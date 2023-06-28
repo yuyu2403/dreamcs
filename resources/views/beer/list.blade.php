@@ -36,52 +36,39 @@
     placeholder="検索したいこと入れてね♡">
     <input type="submit" value="検索">
 </form>
+
 <form action="/login" method="get">
     <button type="submit">ログイン</button>
 </form>
-<div class="container">
-    <div id="product-list">
-        <?php
-        // 商品データの配列
-        $products = [
-            [
-                'name' => 'キリン 一番搾り生ビール',
-                'description' => 'アルコール成分: 5% 原材料: 麦芽（外国製造又は国内製造（5%未満））、ホップ カロリー:40kcal/100ml',
-                'price' => 280,
-                'image' => 'itibannshibori.jpg',
-            ],
-            [
-                'name' => 'サッポロ 生ビール黒ラベル★',
-                'description' => 'アルコール成分: 5% 原材料:麦芽（外国製造又は国内製造（5%未満））、ホップ、米、コーン、スターチ カロリー:40kcal/100ml',
-                'price' => 245,
-                'image' => 'kuroraberu.jpg',
-            ],
-            [
-                'name' => 'ヱビスビール',
-                'description' => 'アルコール成分: 5% 原材料:麦芽（外国製造又は国内製造（5%未満））、ホップ カロリー:42kcal/100ml',
-                'price' => 370,
-                'image' => 'ebisu.jpg',
-            ],
-            [
-                'name' => 'ザ・プレミアム・モルツ',
-                'description' => 'アルコール成分: 5.5% 原材料:麦芽（外国製造又は国内製造）、ホップ カロリー:47kcal/100ml',
-                'price' => 420,
-                'image' => 'puremoru.jpg',
-            ],
-            [
-                'name' => 'アサヒ スーパードライ',
-                'description' => 'アルコール成分: 5% 原材料:麦芽（外国製造又は国内製造（５%未満））、ホップ、米、コーン、スターチ カロリー:42kcal/100ml',
-                'price' => 280,
-                'image' => 'supadora.jpg',
-            ],
-            [
-                'name' => 'クラフトビール ジュゴン',
-                'description' => 'アルコール成分: 6% 原材料:麦芽（外国製造又は国内製造（５%未満））、ホップ、米、スターチ カロリー:43kcal/100ml',
-                'price' => 770,
-                'image' => 'jyugon.jpg',
-            ]
-        ];
+@if ($products->count() > 0)
+    <table border="1">
+        <tr>
+            <th>画像</th>
+            <th>銘柄</th>
+            <th>詳細</th>
+            <th>値段</th>
+        </tr>
 
+        @foreach ($products as $product)
+            <tr>
+                <td>{{ $product->image }}</td>
+                <td>{{ $product->name }}</td>
+                <td>{{ $product->detail }}</td>
+                <td>{{ $product->price }}</td>
+            @csrf
+            </form>
+            </td>
+            </tr>
+        @endforeach
+    </table>
+@else
+@endif
+
+
+{{-- <div class="container">
+    <div id="product-list">
+
+        // 商品データの配列
 
         // 商品リストを表示
             foreach ($products as $product) {
@@ -95,7 +82,7 @@
 }
         ?>
     </div>
-</div>
+</div> --}}
 
 </body>
 </html>
