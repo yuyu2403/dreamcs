@@ -11,8 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('address');
+        Schema::table('categories', function (Blueprint $table) {
+            $table->dropForeign('categories_item_id_foreign');
+            $table->dropColumn('item_id');
         });
     }
 
@@ -21,6 +22,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::table('categories', function (Blueprint $table) {
+            //
+        });
     }
 };
