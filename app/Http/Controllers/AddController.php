@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Category;
 
 
 
@@ -10,8 +11,9 @@ use Illuminate\Http\Request;
 class AddController extends Controller
 {
     //
-    public function add()
+    public function add(Request $request, $category_id)
     {
+        $all_categorys = Category::all();
         return view('beer.add');
     }
 }
