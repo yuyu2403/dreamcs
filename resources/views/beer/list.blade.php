@@ -7,18 +7,10 @@
 <html>
 <head>
 
-<<<<<<< HEAD
-<a href="/list">一覧画面へ</a><br>
-<a href="/cart">買い物カートへ</a><br>
-<form action="/beer/list" method="get">
-    <input type="text" name="search" value="{{$keyword}}" placeholder="検索したいこと入れてね♡">
-    <input type="submit" value="検索">
-</form>
-=======
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
->>>>>>> origin/rena3
+
 
     <title>Beer Shop</title>
     <style>
@@ -36,7 +28,12 @@
     </style>
 </head>
 <body>
-
+<a href="/list">一覧画面へ</a><br>
+<a href="/cart">買い物カートへ</a><br>
+<form action="/beer/list" method="get">
+    <input type="text" name="search" value="{{$keyword}}" placeholder="検索したいこと入れてね♡">
+    <input type="submit" value="検索">
+</form>
 <div class="container">
     <div id="product-list">
         <?php
