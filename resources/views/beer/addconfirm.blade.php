@@ -1,15 +1,10 @@
-逐一コミットして変更の同期を押してのあとにプッシュしてプルリクエスト承認してもらう。
-ブランチをメインにマージ
-承認してもらったら新しいブランチを作る
-これの繰り返し
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>注文確認画面</title>
+    <title>新商品登録確認画面</title>
 
     <a href="/list"><button type="button">一覧画面へ</button></a>
     <a href="/cart"><img src="/images/cart.png" alt="買い物カートの画像"></a><form action="/beer/list" method="get">
@@ -35,6 +30,10 @@
         在庫：
         <p>{{$request->stock}}</p>
     </li>
+<li>
+        カテゴリー：
+        <p>{{$request->category}}</p>
+    </li>
     <li>
         ビール画像：
         <p>{{$request->image}}</p>
@@ -46,6 +45,7 @@
 <input type="hidden" name="detail" value="{{$request->detail}}">
 <input type="hidden" name="price" value="{{$request->price}}">
 <input type="hidden" name="stock" value="{{$request->stock}}">
+<input type="hidden" name="category" value="{{$request->category}}">
 <input type="hidden" name="image" value="{{$request->image}}">
 <div>
 <button class="btn btn-primary" type="submit" name="back" >
