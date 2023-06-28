@@ -65,6 +65,10 @@ Route::get(
     '/add',
     [AddController::class, 'add']
 );
+Route::get(
+    '/addconfirm',
+    [AddconfirmController::class, 'addconfirm']
+);
 
 Route::get('/list', function () {
     return view('beer/list');
