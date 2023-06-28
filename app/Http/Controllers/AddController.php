@@ -9,7 +9,9 @@ use App\Models\Category;
 
 class AddController extends Controller
 {
+
     public function add()
+
     {
         $all_categories = Category::all();
         return view('beer.add', compact('all_categories'));
