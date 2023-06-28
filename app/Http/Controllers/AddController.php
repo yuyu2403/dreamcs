@@ -34,26 +34,30 @@ class AddController extends Controller
             'category_id'  => ['required']
         ]);
 
+
+        return view('beer.addconfirm', compact('request', 'category'));
+    }
+
+    public function send_or_back(Request $request)
+    {
         if ($request->has('back')) {
             return redirect('/add')->withInput();
         }
 
         if ($request->has('send')) {
-            /* Contact モデルのオブジェクトを作成 */
             $new_item = new Item();
 
-            /* リクエストで渡された値を設定する */
             $new_item->name = $request->name;
             $new_item->detail = $request->detail;
             $new_item->price = $request->price;
             $new_item->stock = $request->stock;
-            $new_item->category_id = $request->category;
-            /* データベースに保存 */
+            $new_item->category_id = $request->category_id;
+
             $new_item->save();
 
-            /* 完了画面を表示する */
-            return redirect('/beer/list');
+            return redirect('/list');
+            // return view('beer.list');
+
         }
-        return view('beer.addconfirm', compact('request', 'category'));
     }
 }

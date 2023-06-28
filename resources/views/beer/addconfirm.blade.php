@@ -7,7 +7,8 @@
     <title>新商品登録確認画面</title>
 
     <a href="/list"><button type="button">一覧画面へ</button></a>
-    <a href="/cart"><img src="/images/cart.png" alt="買い物カートの画像"></a><form action="/beer/list" method="get">
+    {{-- <form action="/beer/list" method="get"> --}}
+    <a href="/cart"><img src="/images/cart.png" alt="買い物カートの画像"></a>
 
 </head>
 <body>
@@ -40,12 +41,14 @@
     </li>
 </ul>
 
-<form action="" method="post">
+<form action="/addcomplete" method="post">
+                    <input id="image" type="file" name="image">
+
 <input type="hidden" name="name" value="{{$request->name}}">
 <input type="hidden" name="detail" value="{{$request->detail}}">
 <input type="hidden" name="price" value="{{$request->price}}">
 <input type="hidden" name="stock" value="{{$request->stock}}">
-<input type="hidden" name="category" value="{{$request->category}}">
+<input type="hidden" name="category_id" value="{{$request->category_id}}">
 <input type="hidden" name="image" value="{{$request->image}}">
 <div>
 <button class="btn btn-primary" type="submit" name="back" >
