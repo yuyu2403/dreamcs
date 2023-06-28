@@ -50,9 +50,7 @@ Route::get('/rena', function () {
 
 
 
-Route::get('/cart', function () {
-    return view('beer/cart');
-});
+Route::get('/cart', [CartController::class, 'cart']);
 
 // Route::get('/confirm', function () {
 //     return view('beer/confirm');

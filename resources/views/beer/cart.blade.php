@@ -17,5 +17,31 @@
 <body>
 <h2>カートの中身</h2>
 
+    <table>
+        <thead>
+            <tr>
+                <th>商品名</th>
+                <th>個数</th>
+                <th>価格</th>
+                <th>合計金額</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($cart_items as $cart_item)
+                <tr>
+                    <td>{{ $cart_item->item->name }}</td>
+                    <td>{{ $cart_item->num }}</td>
+                    <td>{{ $cart_item->item->price }}</td>
+                    <td>{{ $cart_item->num * $cartItem->item->price }}</td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+
+
+
+
+
+
 </body>
 
