@@ -1,12 +1,19 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UploadImageController;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ConfirmController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\FinishController;
 use App\Http\Controllers\ListController;
 use App\Http\Controllers\CartController;
+/* 画像アップロード用のコントローラを読み込み */
+use App¥Http¥Controllers¥UploadImageController;
+/* POST 送信された画像を受け取って保存するルーティング */
+
+Route::post('upload_form', [UploadImageController::class, 'upload']);
 
 /*
 |--------------------------------------------------------------------------
@@ -64,3 +71,22 @@ Route::get('/list', function () {
 Route::get('/index', function () {
     return view('beer/index');
 });
+
+Route::get('upload_form', function () {
+    return view('upload_form');
+});
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+/* 画像アップロードフォームを表示するルーティング */
+Route::get('upload_form', function () {
+    return view('upload_form');
+});
+
+/* POST 送信された画像を受け取って保存するルーティング */
+Route::post('upload_form', [UploadImageController::class, 'upload']);
+
+/* アップロードされた画像の一覧を表示するルーティング */
+Route::get('upload_images', [UploadImageController::class, 'index']);
