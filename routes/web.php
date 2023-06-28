@@ -67,26 +67,23 @@ Route::get(
     [AddController::class, 'add']
 );
 
-Route::get(
+Route::post(
     '/addconfirm',
     [AddController::class, 'addconfirm']
 );
 
-Route::get('/list', function () {
-    return view('beer/list');
-});
 
-Route::get('/index', function () {
-    return view('beer/index');
-});
+Route::get(
+    '/list',
+    [ListController::class, 'list']
+);
+
 
 Route::get('upload_form', function () {
     return view('upload_form');
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 /* 画像アップロードフォームを表示するルーティング */
 Route::get('upload_form', function () {
