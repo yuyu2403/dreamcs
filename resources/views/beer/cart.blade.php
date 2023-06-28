@@ -11,9 +11,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>カートの中身</title>
     <a href="/list">一覧画面へ</a><br>
+    <form action="/login" method="get">
+    <button type="submit">ログイン</button>
 </head>
 <body>
 <h2>カートの中身</h2>
 
 </body>
-</html>
+

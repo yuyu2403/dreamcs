@@ -36,6 +36,9 @@
     placeholder="検索したいこと入れてね♡">
     <input type="submit" value="検索">
 </form>
+<form action="/login" method="get">
+    <button type="submit">ログイン</button>
+</form>
 <div class="container">
     <div id="product-list">
         <?php
