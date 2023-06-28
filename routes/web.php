@@ -70,6 +70,11 @@ Route::post(
     [AddController::class, 'addconfirm']
 );
 
+Route::post(
+    '/addcomplete',
+    [AddController::class, 'send_or_back']
+);
+
 
 Route::get(
     '/list',
