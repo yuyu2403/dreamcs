@@ -13,7 +13,7 @@ use App\Models\User;
 
 class FinishController extends Controller
 {
-    public function Confirm()
+    public function Confirm(Request $request)
     {
         // カートから選択した商品の情報を取得
         $cartItems = session('cart'); // 仮にセッションからカートの情報を取得する例とします
@@ -37,7 +37,9 @@ class FinishController extends Controller
             $totalQuantity += $cartItem['quantity'];
             $totalPrice += $product->price * $cartItem['quantity'];
         }
-
+        if ($request->has('send')) {
+            return redirect('/beer/finish');
+        }
         // ビューを返す
         return view('confirm', compact('items', 'totalQuantity', 'totalPrice'));
     }
