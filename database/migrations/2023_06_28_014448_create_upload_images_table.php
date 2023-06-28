@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('beer', function (Blueprint $table) {
+        Schema::create('upload_images', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('detail');
-            $table->integer('price')->default(0);
-            $table->integer('stock')->default(0);
+            $table->string('filename')->comment('ユーザーがアップロードしたファイルの名前');
+            $table->string('real_filename')->comment('ストレージに保存されている実際のファイルの名前');
+            $table->text('memo')->comment('ファイルの備考');
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('beer');
+        Schema::dropIfExists('upload_images');
     }
 };

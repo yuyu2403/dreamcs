@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-App\Models\;
+
+
+use App\Models\UploadImage;
+use App\Models\List;
+
+
 
 
 
