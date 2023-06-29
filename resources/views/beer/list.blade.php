@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -122,18 +123,19 @@
 
                             {{-- 商品リストを表示 --}}
                             @foreach ($items as $item)
-                                <form action="beer/cart" method="post">
+                                <form action="/add_cart" method="post">
                                         <div class='item' style="text-align: left;">
-                                            <img src="{{ $item->filepath }}" width="200">
+                                            <img src="/img/{{$item->id}}/{{$item->filepath}}" width='300'>;
                                             <h3 style="color: white;">{{ $item->name }}</h3>
                                             <p style="color: white;">{{ $item->detail }}</p>
                                             <p style="color: white;">{{$item->category->name}}</p>
                                             <p style="color: white;">Price: &#165;{{ $item->price }}</p>
 
                                             <div style="display: flex; justify-content: flex-end;">
-                                                <input type="submit" value="購入" style="font-size: 15px; padding: 15px 50px;">
+                                                <input type="submit" name="add_cart" value="カートに追加する" style="font-size: 15px; padding: 15px 50px;">
+                                                <input type="hidden" name="add_cart_beer" value="{{$item->id}}">
                                             </div>
-                                            @if ($item->stock<0)
+                                            @if ($item->stock<=0)
                                                 <p style="color: white;">現在、売り切れです。</p>
                                             @endif
 

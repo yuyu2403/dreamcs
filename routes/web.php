@@ -51,8 +51,7 @@ Route::get('/rena', function () {
 
 Route::get('/cart', [CartController::class, 'cart']);
 Route::post('/cart/{id}', [CartController::class, 'cart']);
-Route::post('/cart/delete/{id}', [CartController::class, 'cart']);
-Route::post('/cart/edit/{id}', [CartController::class, 'cart']);
+Route::post('/cart/delete/{id}', [CartController::class, 'delete']);
 
 // Route::get('/confirm', function () {
 //     return view('beer/confirm');
@@ -84,6 +83,11 @@ Route::post(
 Route::get(
     '/list',
     [ListController::class, 'list']
+);
+
+Route::post(
+    '/add_cart',
+    [ListController::class, 'add_cart']
 );
 
 
