@@ -42,7 +42,7 @@
 </ul>
 
 <form action="/addcomplete" method="post">
-                    <input id="image" type="file" name="image">
+
 
 <input type="hidden" name="name" value="{{$request->name}}">
 <input type="hidden" name="detail" value="{{$request->detail}}">
