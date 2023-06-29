@@ -25,7 +25,7 @@
 <body>
 <a href="/list">一覧画面へ</a><br>
 <a href="/cart"><img src="/images/cart.png" alt="買い物カートの画像"></a><form action="/beer/list" method="get">
-<form action="/beer/list" method="get">
+<form action="/list" method="get">
     <input type="text" name="search"
     {{-- value="{{$keyword}}"  --}}
     placeholder="検索したいこと入れてね♡">
@@ -38,7 +38,7 @@
 
         {{-- 商品リストを表示 --}}
         @foreach ($items as $item)
-            <form action="beer/cart" method="post">
+            <form action="/cart" method="GET">
                 <div class='item'>
                 <img src="{{ $item->filepath }}" width="200">
                 <h3>{{ $item->name }}</h3>
