@@ -31,9 +31,11 @@ class AddController extends Controller
 
             'stock'  => ['required'],
 
-            'category_id'  => ['required']
-        ]);
+            'category_id'  => ['required'],
 
+            'image' => 'required|max:1024|mimes:jpg,jpeg,png,gif'
+        ]);
+        $file_path = $request->image->store('images', 'public');
 
         return view('beer.addconfirm', compact('request', 'category'));
     }
