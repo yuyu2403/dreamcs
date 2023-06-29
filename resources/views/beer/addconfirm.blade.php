@@ -7,7 +7,6 @@
     <title>新商品登録確認画面</title>
 
     <a href="/list"><button type="button">一覧画面へ</button></a>
-    {{-- <form action="/beer/list" method="get"> --}}
     <a href="/cart"><img src="/images/cart.png" alt="買い物カートの画像"></a>
 
 </head>
@@ -37,22 +36,31 @@
     </li>
     <li>
         ビール画像：
-        <p>{{$request->image}}</p>
-    </li>
+        {{-- <img src='". asset("{{$file_path}}"). "' width='300'>; --}}
+        <img src="{{ $image }}" width='300'>;
+
+    </div>
+
+</li>
 </ul>
 
-<form action="/addcomplete" method="post">
+<form action="/addcomplete" method="post" enctype="multipart/form-data">
 
 
-<input type="hidden" name="name" value="{{$request->name}}">
-<input type="hidden" name="detail" value="{{$request->detail}}">
-<input type="hidden" name="price" value="{{$request->price}}">
-<input type="hidden" name="stock" value="{{$request->stock}}">
-<input type="hidden" name="category_id" value="{{$request->category_id}}">
-<input type="hidden" name="image" value="{{$request->image}}">
+    <input type="hidden" name="name" value="{{$request->name}}">
+    <input type="hidden" name="detail" value="{{$request->detail}}">
+    <input type="hidden" name="price" value="{{$request->price}}">
+    <input type="hidden" name="stock" value="{{$request->stock}}">
+    <input type="hidden" name="category_id" value="{{$request->category_id}}">
+    <input type="hidden" name="image" value="{{ $newImageName }}">
+{{-- <input type="hidden" name="image" value="{{$request->image}}"> --}}
+{{-- <input type="hidden" name="image" value="{{$file_path}}"> --}}
+{{-- <input type="hidden" name="image" value="{{$request->image->getClientOriginalName()}}"> --}}
+{{-- <input type="hidden" name="image" value="{{$file_path}}"> --}}
+
 <div>
 <button class="btn btn-primary" type="submit" name="back" >
-   <i class="fa-solid fa-caret-left"></i>戻る</button>
+<i class="fa-solid fa-caret-left"></i>戻る</button>
 
 </div>
 <div>

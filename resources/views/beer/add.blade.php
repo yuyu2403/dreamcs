@@ -23,7 +23,7 @@
 </div>
 <div>
     @foreach($all_categories as $category)
-        <input type="radio" name="category_id" value="{{ $category->id}}">
+        <input type="radio" name="category_id" value="{{$category->id}}">
         {{$category->name}}
         @if ($errors -> has('category_id'))
         <span class="error">{{$errors -> first('catedory_id')}}</span>
@@ -54,17 +54,15 @@
 </div>
 
 <div>
-            <label for="image">
-                <p>ビール画像</p>
-                <input id="image" type="file" name="image">
-            </label>
+        <label for="image">ビール画像</label>
+        <input id="image" type="file" name="image">
 </div>
 
 <div>
         <input type="submit" value="送信">
 </div>
 
-    @csrf
+@csrf
 </form>
 </body>
 </html>
