@@ -17,7 +17,7 @@
 <body>
 <h2>カートの中身</h2>
 
-    <table>
+    <table border='1'>
         <thead>
             <tr>
                 <th>商品名</th>
@@ -33,6 +33,19 @@
                     <td>{{ $cart_item->num }}</td>
                     <td>{{ $cart_item->item->price }}</td>
                     <td>{{ $cart_item->num * $cartItem->item->price }}</td>
+                    <td>
+                        <form action="/cart/delete/{{ $cart_item->id }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">削除</button>
+                        </form>
+                        <form action="/cart/update/{{ $cart_item->id }}" method="POST">
+                            @csrf
+                            @method('PUT')
+                            <input type="number" name="num" value="{{ $cart_item->num }}" min="1" max='99'>
+                            <button type="submit">変更</button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
