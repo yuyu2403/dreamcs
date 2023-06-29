@@ -10,11 +10,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>カートの中身</title>
+</head>
+<body>
     <a href="/list"><button type="button">一覧画面へ</button></a>
     <form action="/login" method="get">
     <button type="submit">ログイン</button>
-</head>
-<body>
+    </form>
 <h2>カートの中身</h2>
 
     <table border='1'>
@@ -24,6 +25,8 @@
                 <th>個数</th>
                 <th>価格</th>
                 <th>合計金額</th>
+                <th>削除</th>
+                <th>数量変更</th>
             </tr>
         </thead>
         <tbody>
@@ -32,20 +35,23 @@
                     <td>{{ $cart_item->item->name }}</td>
                     <td>{{ $cart_item->num }}</td>
                     <td>{{ $cart_item->item->price }}</td>
-                    <td>{{ $cart_item->num * $cartItem->item->price }}</td>
+                    <td>{{ $cart_item->num * $cart_item->item->price }}</td>
                     <td>
                         <form action="/cart/delete/{{ $cart_item->id }}" method="POST">
                             @csrf
-                            @method('DELETE')
+                            {{-- @method('DELETE') --}}
                             <button type="submit">削除</button>
                         </form>
-                        <form action="/cart/update/{{ $cart_item->id }}" method="POST">
+                    </td>
+                    <td>
+                        <form action="/cart/edit/{{ $cart_item->id }}" method="POST">
                             @csrf
-                            @method('PUT')
+                            {{-- @method('EDIT') --}}
                             <input type="number" name="num" value="{{ $cart_item->num }}" min="1" max='99'>
                             <button type="submit">変更</button>
                         </form>
                     </td>
+
                 </tr>
             @endforeach
         </tbody>
