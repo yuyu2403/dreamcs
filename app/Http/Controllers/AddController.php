@@ -52,6 +52,8 @@ class AddController extends Controller
             $new_item->price = $request->price;
             $new_item->stock = $request->stock;
             $new_item->category_id = $request->category_id;
+            $new_item->filename = $request->filename;
+            $new_item->filepath = $file_path;
 
             $new_item->save();
 

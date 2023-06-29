@@ -37,7 +37,7 @@
     </li>
     <li>
         ビール画像：
-        <p>{{$request->image}}</p>
+        <p>{{$request->filename}}</p>
     </li>
 </ul>
 
@@ -49,7 +49,7 @@
 <input type="hidden" name="price" value="{{$request->price}}">
 <input type="hidden" name="stock" value="{{$request->stock}}">
 <input type="hidden" name="category_id" value="{{$request->category_id}}">
-<input type="hidden" name="image" value="{{$request->image}}">
+<input type="hidden" name="filename" value="{{$request->filename}}">
 <div>
 <button class="btn btn-primary" type="submit" name="back" >
    <i class="fa-solid fa-caret-left"></i>戻る</button>
