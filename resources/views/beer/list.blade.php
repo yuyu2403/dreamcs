@@ -40,18 +40,21 @@
         @foreach ($items as $item)
             <form action="beer/cart" method="post">
                 <div class='item'>
-                <img src="images/{{ $item->image }}" alt="{{ $item->image }}" />
+                <img src="{{ $item->filepath }}" width="200">
                 <h3>{{ $item->name }}</h3>
                 <p>{{ $item->detail }}</p>
-                <p>{{ $item->category }}</p>
-                <p>Price: &#165;{{ $item->detail }}</p>
+                <p>{{$item->category->name}}</p>
+                <p>Price: &#165;{{ $item->price }}</p>
                 <input type="submit" value="購入">
+
+                @if ($item->stock<0)
+                現在、売り切れです。
+                @endif
+
                 @csrf
                 </form>
                 </div>
         @endforeach
-
-
     </div>
 </div>
 
