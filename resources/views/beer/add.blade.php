@@ -54,9 +54,9 @@
 </div>
 
 <div>
-            <label for="image">
+            <label for="filename">
                 <p>ビール画像</p>
-                <input id="image" type="file" name="image">
+                <input id="filename" type="file" name="filename">
             </label>
 </div>
 
