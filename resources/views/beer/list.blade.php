@@ -125,7 +125,7 @@
                             @foreach ($items as $item)
                                 <form action="beer/cart" method="post">
                                         <div class='item' style="text-align: left;">
-                                            <img src="{{ $item->filepath }}" width="200">
+                                            <img src="/img/{{$item->id}}/{{$item->filepath}}" width='300'>;
                                             <h3 style="color: white;">{{ $item->name }}</h3>
                                             <p style="color: white;">{{ $item->detail }}</p>
                                             <p style="color: white;">{{$item->category->name}}</p>
@@ -134,7 +134,7 @@
                                             <div style="display: flex; justify-content: flex-end;">
                                                 <input type="submit" value="購入" style="font-size: 15px; padding: 15px 50px;">
                                             </div>
-                                            @if ($item->stock<0)
+                                            @if ($item->stock<=0)
                                                 <p style="color: white;">現在、売り切れです。</p>
                                             @endif
 
