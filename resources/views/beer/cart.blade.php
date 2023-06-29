@@ -26,7 +26,6 @@
                 <th>価格</th>
                 <th>合計金額</th>
                 <th>削除</th>
-                <th>数量変更</th>
             </tr>
         </thead>
         <tbody>
@@ -43,15 +42,6 @@
                             <button type="submit">削除</button>
                         </form>
                     </td>
-                    <td>
-                        <form action="/cart/edit/{{ $cart_item->id }}" method="POST">
-                            @csrf
-                            {{-- @method('EDIT') --}}
-                            <input type="number" name="num" value="{{ $cart_item->num }}" min="1" max='99'>
-                            <button type="submit">変更</button>
-                        </form>
-                    </td>
-
                 </tr>
             @endforeach
         </tbody>

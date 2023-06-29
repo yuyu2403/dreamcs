@@ -25,14 +25,11 @@ class CartController extends Controller
             return view('auth.login');
         }
     }
-    public function delete($cart_item)
+    public function delete($id)
     {
-        $cart_to_delete = Cart::find($cart_item->id);
-        $cart_to_delete->delete;
-    }
-    public function edit($cart_item)
-    {
-        $cart = Cart::find($cart_item->id);
-        return view('beer.cart', compact('items'));
+        $cart_to_delete = Cart::find($id);
+        $cart_to_delete->delete();
+        // return view('beer.cart', compact('items'));
+        return redirect('/cart');
     }
 }

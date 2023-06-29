@@ -40,7 +40,8 @@
         @foreach ($items as $item)
             <form action="/cart" method="GET">
                 <div class='item'>
-                <img src="{{ $item->filepath }}" width="200">
+                {{-- <img src="{{ $item->filepath }}" width="200"> --}}
+                <img src='". asset("{{$item->filepath}}"). "' width='200'>;
                 <h3>{{ $item->name }}</h3>
                 <p>{{ $item->detail }}</p>
                 <p>{{$item->category->name}}</p>
