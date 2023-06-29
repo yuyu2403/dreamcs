@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 
@@ -11,6 +12,7 @@ use App\Models\Contact;
 use App\Models\Cart;
 use App\Models\Category;
 use App\Models\User;
+
 
 
 
@@ -53,5 +55,21 @@ class ListController extends Controller
         return view('beer.list', compact('items', 'all_items', 'search'));
 
         // return view('beer.list', ['products' => $products]);
+    }
+
+    public function add_cart(Request $request)
+    {
+        if ($request->has('add_cart')) {
+            $new_cart = new Cart();
+            $user = Auth::user();
+            /* リクエストで渡された値を設定する */
+            $new_cart->item_id = $request->add_cart_beer;
+            $new_cart->user_id = $user->id;
+            $new_cart->num = 1;
+            $new_cart->save();
+
+
+            return redirect('/cart');
+        }
     }
 }

@@ -85,6 +85,11 @@ Route::get(
     [ListController::class, 'list']
 );
 
+Route::post(
+    '/add_cart',
+    [ListController::class, 'add_cart']
+);
+
 
 Route::get('upload_form', function () {
     return view('upload_form');
