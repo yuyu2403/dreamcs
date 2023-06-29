@@ -15,3 +15,7 @@
         </div>
     </div>
 </x-app-layout>
+<?php
+$alert = "<script type='text/javascript'>alert('20歳以上しか入れません');</script>";
+print $alert
+?>
