@@ -35,7 +35,7 @@ class AddController extends Controller
 
             'image' => 'required|max:1024|mimes:jpg,jpeg,png,gif'
         ]);
-        $file_path = $request->image->store('images', 'public');
+
 
         return view('beer.addconfirm', compact('request', 'category'));
     }
@@ -47,6 +47,7 @@ class AddController extends Controller
         }
 
         if ($request->has('send')) {
+            $file_path = $request->image->store('images', 'public');
             $new_item = new Item();
 
             $new_item->name = $request->name;
@@ -54,7 +55,7 @@ class AddController extends Controller
             $new_item->price = $request->price;
             $new_item->stock = $request->stock;
             $new_item->category_id = $request->category_id;
-            $new_item->filename = $request->filename;
+            $new_item->filename = $request->image->getClientOriginalName();
             $new_item->filepath = $file_path;
 
             $new_item->save();
