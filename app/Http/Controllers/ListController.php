@@ -45,17 +45,19 @@ class ListController extends Controller
 
     public function list(Request $request)
     {
-        $items = Item::all();
         $query = Item::query();
         if (!empty($request)) {
             $search = $request->search;
             $query->where('name', 'LIKE', "%{$search}%");
         }
         $all_items = $query->get();
-        return view('beer.list', compact('items', 'all_items', 'search'));
+        return view('beer.list', compact('all_items', 'search'));
 
         // return view('beer.list', ['products' => $products]);
     }
+
+
+
 
     public function add_cart(Request $request)
     {

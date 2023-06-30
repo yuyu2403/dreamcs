@@ -104,8 +104,7 @@
 
 
         <div class="d-flex align-items-center">
-            <form action="/beer/list" method="get" style="margin-right: 10px;">
-            {{-- <form action="/beer/list" method="get"> --}}
+            <form action="/list" method="get" style="margin-right: 10px;">
                 <div style="display: flex;">
                     <input type="text" name="search" placeholder="検索したいこと入れてね♡">
                     <input type="submit" value="検索">
@@ -122,7 +121,7 @@
                         <div id="contact-list">
 
                             {{-- 商品リストを表示 --}}
-                            @foreach ($items as $item)
+                            @foreach ($all_items as $item)
                                 <form action="/add_cart" method="post">
                                         <div class='item' style="text-align: left;">
                                             <img src="/img/{{$item->id}}/{{$item->filepath}}" width='300'>;
