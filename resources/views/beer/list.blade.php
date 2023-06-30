@@ -82,6 +82,7 @@
             <div>
             <h1>Dream Catchears</h1>
             </div>
+            <h2>{{Auth::user()->name}}さん、ようこそ！</h2>
         </header>
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
