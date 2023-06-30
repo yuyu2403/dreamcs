@@ -303,6 +303,11 @@
                                             <p style="color: white;">Price: &#165;{{ $item->price }}</p>
                                             </span>
                                             <div style="display: flex; justify-content: flex-end;">
+                                                <select name="num">
+                                                @for($i = 1; $i <= $item->stock; $i++)
+                                                    <option value="{{$i}}">{{$i}}</option>
+                                                @endfor
+                                                </select>
                                                 <input type="submit" name="add_cart" value="カートに追加する" style="font-size: 15px; padding: 15px 50px;">
                                                 <input type="hidden" name="add_cart_beer" value="{{$item->id}}">
                                             </div>
