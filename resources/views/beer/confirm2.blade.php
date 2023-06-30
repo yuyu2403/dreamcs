@@ -136,6 +136,10 @@
                             メールアドレス：
                             <p>{{$user->email}}</p>
                         </li>
+                        <li>
+                            合計金額：
+                            <p>{{$user->email}}</p>
+                        </li>
                     </ul>
                 <div>
                 <div>
