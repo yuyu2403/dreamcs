@@ -75,32 +75,10 @@ class FinishController extends Controller
             foreach ($cart_items as $cart_item) {
                 $item = Item::where('id', $cart_item->item_id)->first();
                 $item->decrement('stock', $cart_item->num);
+                $cart_item->delete();
             }
             return view('beer.finish');
-            // return redirect('/finish');
         }
         return view('beer.confirm2', compact('user', 'items', 'cart_items'));
-    }
-
-
-    public function finish(Request $request)
-    {
-        // 買い物をやめるなら
-        if ($request->has('back')) {
-            return redirect('/cart');
-        }
-
-        // 購入完了しますボタンおしたら
-        if ($request->has('send')) {
-            $user = Auth::user();
-            // $items = Item::all();
-            $cart_items = Cart::where('user_id', $user->id)->get();
-
-            foreach ($cart_items as $cart_item) {
-                $item = Item::where('id', $cart_item->item_id)->get();
-                $item->decrement('stock', $cart_item->num);
-            }
-            return redirect('/finish');
-        }
     }
 }
