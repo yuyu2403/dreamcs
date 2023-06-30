@@ -110,8 +110,7 @@
                             <th style="color: white;">価格</th>
                             <th style="color: white;">削除</th>
                             <th style="color: white;">数量変更</th>
-                            <th style="color: white;">なにこれ</th>
-                            <th style="color: white;">合計金額</th>
+                            <th style="color: white;">個別価格</th>
 
                         </tr>
                     </thead>
@@ -138,10 +137,13 @@
                                     </form>
                                 </td>
                                 <td style="color: white;">{{ $cart_item->num * $cart_item->item->price }}</td>
-                                <td style="color: white;">{{$totalMoney}}</td>
                             </tr>
                             <?php $totalMoney += $cart_item->num * $cart_item->item->price; ?>
                         @endforeach
+                        <tr>
+                            <td colspan="4" style="color: white;">合計金額</td>
+                            <td colspan="2" style="color: white;">{{$totalMoney}}</td>
+                        </tr>
                     </tbody>
                 </table>
 
