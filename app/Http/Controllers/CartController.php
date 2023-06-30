@@ -38,4 +38,13 @@ class CartController extends Controller
         // return view('beer.cart', compact('items'));
         return redirect('/cart');
     }
+    public function update(Request $request, $id)
+    {
+
+        $cart_to_update = Cart::find($id);
+        $cart_to_update->num = $request->num;
+        $cart_to_update->save();
+
+        return redirect('/cart');
+    }
 }
