@@ -89,7 +89,7 @@
             }
 
             .search-form-003 input {
-                width: 1600px;
+                width: 350px;
                 height: 45px;
                 padding: 5px 40px;
                 border: none;
@@ -194,9 +194,10 @@
 
 
 
-     <form action="/beer/list" method="get" class="search-form-003">
+     <form action="" method="get" class="search-form-003" style="width: 400px;">
+     {{-- <form action="/beer/list" method="get" class="search-form-003" style="width: 400px;"> --}}
     <label>
-        <input type="text" placeholder="検索したいこと入れてね♡">
+        <input type="text" name="search", placeholder="検索したいこと入れてね♡">
     </label>
     <button type="submit" class="btn btn-primary" aria-label="検索"></button>
 </form>
