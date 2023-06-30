@@ -130,7 +130,7 @@
                                     </form>
                                 </td>
                                 <td>
-                                    <form action="/cart/{{ $cart_item->id }}" method="POST">
+                                    <form action="/cart/update/{{ $cart_item->id }}" method="POST">
                                         @csrf
                                         {{-- @method('EDIT') --}}
                                         <input type="number" name="num" value="{{ $cart_item->num }}" min="1" max='99'>
