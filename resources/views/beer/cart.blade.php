@@ -90,9 +90,6 @@
                     </button>
                 </div>
             </nav>
-                <form action="/dashboard">
-                    <button type="submit">ログイン</button>
-                </form>
             </form>
             <div class="centered">
                 <h2>カートの中身</h2>
