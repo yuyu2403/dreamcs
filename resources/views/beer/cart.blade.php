@@ -120,10 +120,10 @@
                     <tbody>
                         @foreach($cart_items as $cart_item)
                             <tr>
-                                <td>{{ $cart_item->item->name }}</td>
-                                <td>{{ $cart_item->num }}</td>
-                                <td>{{ $cart_item->item->price }}</td>
-                                <td>{{ $cart_item->num * $cart_item->item->price }}</td>
+                                <td style="color: white;">{{ $cart_item->item->name }}</td>
+                                <td style="color: white;">{{ $cart_item->num }}</td>
+                                <td style="color: white;">{{ $cart_item->item->price }}</td>
+                                <td style="color: white;">{{ $cart_item->num * $cart_item->item->price }}</td>
                                 <td>
                                     <form action="/cart/delete/{{ $cart_item->id }}" method="POST">
                                         @csrf
