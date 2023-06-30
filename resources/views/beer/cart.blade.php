@@ -102,6 +102,24 @@
                     </a>
                 </div>
 
+                @if($cart_items)
+                <div class="centered">
+                    <h2>カートの中身が空です...</h2>
+                </div>
+
+                <div style="display: flex; gap: 50px; margin: 15px;">
+                    <form action="/list">
+                        <button class="btn btn-primary" type="submit">買い物を続ける
+                            <i class="fa-solid fa-caret-right"></i>
+                        </button>
+                    </form>
+                </div>
+
+                @else
+
+
+
+
                 <table border='1'>
                     <thead>
                         <tr>
@@ -117,62 +135,64 @@
                     <tbody>
                         <?php $totalMoney = 0 ; ?>
                         @foreach($cart_items as $cart_item)
-                            <tr>
-                                <td style="color: white;">{{ $cart_item->item->name }}</td>
-                                <td style="color: white;">{{ $cart_item->num }}</td>
-                                <td style="color: white;">{{ $cart_item->item->price }}</td>
-                                <td>
-                                    <form action="/cart/delete/{{ $cart_item->id }}" method="POST">
-                                        @csrf
-                                        {{-- @method('DELETE') --}}
-                                        <button type="submit">削除</button>
-                                    </form>
-                                </td>
-                                <td>
-                                    <form action="/cart/update/{{ $cart_item->id }}" method="POST">
-                                        @csrf
-                                        {{-- @method('EDIT') --}}
-                                        <input type="number" name="num" value="{{ $cart_item->num }}" min="1" max='99'>
-                                        <button type="submit">変更</button>
+                        <tr>
+                            <td style="color: white;">{{ $cart_item->item->name }}</td>
+                            <td style="color: white;">{{ $cart_item->num }}</td>
+                            <td style="color: white;">{{ $cart_item->item->price }}</td>
+                            <td>
+                                <form action="/cart/delete/{{ $cart_item->id }}" method="POST">
+                                    @csrf
+                                    {{-- @method('DELETE') --}}
+                                    <button type="submit">削除</button>
+                                </form>
+                            </td>
+                            <td>
+                                <form action="/cart/update/{{ $cart_item->id }}" method="POST">
+                                    @csrf
+                                    {{-- @method('EDIT') --}}
+                                    <input type="number" name="num" value="{{ $cart_item->num }}" min="1" max="99">
+                                    <button type="submit">変更</button>
                                     </form>
                                 </td>
                                 <td style="color: white;">{{ $cart_item->num * $cart_item->item->price }}</td>
                             </tr>
                             <?php $totalMoney += $cart_item->num * $cart_item->item->price; ?>
-                        @endforeach
-                        <tr>
-                            <td colspan="4" style="color: white;">合計金額</td>
-                            <td colspan="3" style="color: white;">{{$totalMoney}}</td>
+                            @endforeach
+                            <tr>
+                                <td colspan="4" style="color: white;">合計金額</td>
+                                <td colspan="3" style="color: white;">{{$totalMoney}}</td>
                         </tr>
                     </tbody>
                 </table>
-                    <div style="display: flex; gap: 50px; margin: 15px;">
-                        <form action="/list">
-                            <button class="btn btn-primary" type="submit">買い物を続ける
+                <div style="display: flex; gap: 50px; margin: 15px;">
+                    <form action="/list">
+                        <button class="btn btn-primary" type="submit">買い物を続ける
                             <i class="fa-solid fa-caret-right"></i>
-                            </button>
-                        </form>
+                        </button>
+                    </form>
 
 
-                        <form action="/confirm">
-                            <button class="btn btn-primary" type="submit">購入確認画面に進む
-                                <i class="fa-solid fa-caret-right"></i>
-                            </button>
-                        </form>
-                    </div>
+                    <form action="/confirm">
+                        <button class="btn btn-primary" type="submit">購入確認画面に進む
+                            <i class="fa-solid fa-caret-right"></i>
+                            <input type="hidden" name="totalMoney" value={{$totalMoney}}>
+                        </button>
+                    </form>
+                </div>
 
+                @endif
 
 
                 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-                    <footer class="d-flex justify-content-center align-items-center mt-auto text-white-50">
-                        <p style="font-size: 24px;">Yuusuke/Syouma/Arisa/Jinichiro </p>
-                    </footer>
+                <footer class="d-flex justify-content-center align-items-center mt-auto text-white-50">
+                    <p style="font-size: 24px;">Yuusuke/Syouma/Arisa/Jinichiro </p>
+                </footer>
 
 
 
 
 
 
-        </body>
+            </body>
     </head>
 </html>

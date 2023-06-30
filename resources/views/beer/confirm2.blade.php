@@ -113,12 +113,14 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php $totalMoney = 0 ; ?>
                         @foreach($cart_items as $cart_item)
                             <tr>
                                 <td style="color: white;">{{ $cart_item->item->name }}</td>
                                 <td style="color: white;">{{ $cart_item->num }}</td>
                                 <td style="color: white;">{{ $cart_item->item->price }}</td>
                             </tr>
+                            <?php $totalMoney += $cart_item->num * $cart_item->item->price; ?>
                         @endforeach
                     </tbody>
                 </table>
@@ -138,7 +140,7 @@
                         </li>
                         <li>
                             合計金額：
-                            <p>{{$user->email}}</p>
+                            <p>{{$totalMoney}}</p>
                         </li>
                     </ul>
                 <div>
