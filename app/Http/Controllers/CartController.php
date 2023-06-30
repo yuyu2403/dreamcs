@@ -20,6 +20,12 @@ class CartController extends Controller
             $user = Auth::user();
             $items = Item::all();
             $cart_items = Cart::where('user_id', $user->id)->get();
+            // foreach ($cart_items as $cart_item) {
+            //     $item2 = Item::find($cart_item->item_id);
+            //     $money = $cart_item->num * $item2->price;
+            // }
+            // $totalMoney=$money;
+
             return view('beer.cart', compact('user', 'items', 'cart_items'));
         } else {
             return view('auth.login');
