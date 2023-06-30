@@ -66,8 +66,8 @@ class ListController extends Controller
             $user = Auth::user();
             /* リクエストで渡された値を設定する */
             $new_cart->item_id = $request->add_cart_beer;
+            $new_cart->num = $request->num;
             $new_cart->user_id = $user->id;
-            $new_cart->num = 1;
             $new_cart->save();
 
 
