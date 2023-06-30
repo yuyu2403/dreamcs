@@ -101,25 +101,6 @@
                         <img src="/images/cart.png" alt="買い物カートの画像" style="border-radius: 50%; width: 130px; height: 130px;">
                     </a>
                 </div>
-
-                @if($cart_items)
-                <div class="centered">
-                    <h2>カートの中身が空です...</h2>
-                </div>
-
-                <div style="display: flex; gap: 50px; margin: 15px;">
-                    <form action="/list">
-                        <button class="btn btn-primary" type="submit">買い物を続ける
-                            <i class="fa-solid fa-caret-right"></i>
-                        </button>
-                    </form>
-                </div>
-
-                @else
-
-
-
-
                 <table border='1'>
                     <thead>
                         <tr>
@@ -180,7 +161,7 @@
                     </form>
                 </div>
 
-                @endif
+
 
 
                 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
