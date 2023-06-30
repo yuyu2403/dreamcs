@@ -142,7 +142,7 @@
                         @endforeach
                         <tr>
                             <td colspan="4" style="color: white;">合計金額</td>
-                            <td colspan="2" style="color: white;">{{$totalMoney}}</td>
+                            <td colspan="3" style="color: white;">{{$totalMoney}}</td>
                         </tr>
                     </tbody>
                 </table>
