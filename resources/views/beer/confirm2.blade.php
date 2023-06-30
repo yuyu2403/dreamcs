@@ -90,9 +90,7 @@
                     </button>
                 </div>
             </nav>
-                <form action="/dashboard">
-                    <button type="submit">ログイン</button>
-                </form>
+
             </form>
             <div class="centered">
                 <h2>注文確認画面</h2>
@@ -125,14 +123,14 @@
                     </tbody>
                 </table>
                 <div>
-                    <ul>
+                    <ul style="color: white;">
                         <li>
                             お名前：
                             <p>{{$user->name}}</p>
                         </li>
                         <li>
                             ご住所：
-                            <p>{{$user->adress}}</p>
+                            <p>{{$user->address}}</p>
                         </li>
                         <li>
                             メールアドレス：
