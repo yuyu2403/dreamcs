@@ -84,15 +84,15 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
 
-                    <a class="navbar-brand" href="#">TOP</a>
+                    <a class="navbar-brand" href="/list">TOP</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
             </nav>
-            <a href="/list"><button type="button">一覧画面へ</button></a>
-            <form action="/login" method="get">
-                <button type="submit">ログイン</button>
+                <form action="/dashboard">
+                    <button type="submit">ログイン</button>
+                </form>
             </form>
             <div class="centered">
                 <h2>カートの中身</h2>
