@@ -16,7 +16,7 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     <x-nav-link :href="route('list')" :active="request()->routeIs('list')">
-                        {{ __('商品一覧') }}
+                        {{ __('TOP') }}
                     </x-nav-link>
 
                 </div>
