@@ -12,7 +12,7 @@
         <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css2?family=Cherry+Swash&display=swap' rel= "stylesheet">
 
-        <title>カートの中身</title>
+        <title>注文確認画面</title>
             <style>
                     body{
                         background-color: #373c45;
@@ -95,7 +95,7 @@
                 </form>
             </form>
             <div class="centered">
-                <h2>カートの中身</h2>
+                <h2>注文確認画面</h2>
 
 
 
@@ -105,65 +105,55 @@
                     </a>
                 </div>
 
+
                 <table border='1'>
                     <thead>
                         <tr>
                             <th style="color: white;">商品名</th>
                             <th style="color: white;">個数</th>
                             <th style="color: white;">価格</th>
-                            <th style="color: white;">削除</th>
-                            <th style="color: white;">数量変更</th>
-                            <th style="color: white;">なにこれ</th>
-                            <th style="color: white;">合計金額</th>
-
                         </tr>
                     </thead>
                     <tbody>
-                        <?php $totalMoney = 0 ; ?>
                         @foreach($cart_items as $cart_item)
                             <tr>
                                 <td style="color: white;">{{ $cart_item->item->name }}</td>
                                 <td style="color: white;">{{ $cart_item->num }}</td>
                                 <td style="color: white;">{{ $cart_item->item->price }}</td>
-                                <td>
-                                    <form action="/cart/delete/{{ $cart_item->id }}" method="POST">
-                                        @csrf
-                                        {{-- @method('DELETE') --}}
-                                        <button type="submit">削除</button>
-                                    </form>
-                                </td>
-                                <td>
-                                    <form action="/cart/edit/{{ $cart_item->id }}" method="POST">
-                                        @csrf
-                                        {{-- @method('EDIT') --}}
-                                        <input type="number" name="num" value="{{ $cart_item->num }}" min="1" max='99'>
-                                        <button type="submit">変更</button>
-                                    </form>
-                                </td>
-                                <td style="color: white;">{{ $cart_item->num * $cart_item->item->price }}</td>
-                                <td style="color: white;">{{$totalMoney}}</td>
                             </tr>
-                            <?php $totalMoney += $cart_item->num * $cart_item->item->price; ?>
                         @endforeach
                     </tbody>
                 </table>
-
+                <div>
+                    <ul>
+                        <li>
+                            お名前：
+                            <p>{{$user->name}}</p>
+                        </li>
+                        <li>
+                            ご住所：
+                            <p>{{$user->adress}}</p>
+                        </li>
+                        <li>
+                            メールアドレス：
+                            <p>{{$user->email}}</p>
+                        </li>
+                    </ul>
+                <div>
+                <div>
                     <div>
-                        <td>
-                        <form action="/list">
-                            <button type="submit">買い物を続ける</button>
+                        <form action="">
+                            <button class="btn btn-primary" type="submit" name="back" >
+                                <i class="fa-solid fa-caret-left"></i>カートに戻る
+                            </button>
+                            <button class="btn btn-primary" type="submit" name="send">
+                                    注文を完了する
+                                    <i class="fa-solid fa-caret-right"></i>
+                            </button>
                         </form>
-                        </td>
-                        <td>
-                        <form action="/confirm">
-                            <button type="submit">購入確認画面に進む</button>
-                        </form>
-                        </td>
                     </div>
-
+                </div>
             </div>
-
-
                 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
                     <footer class="d-flex justify-content-center align-items-center mt-auto text-white-50">
                         <p style="font-size: 24px;">Yuusuke/Syouma/Arisa/Jinichiro </p>

@@ -171,12 +171,13 @@
             <div>
             <h1>Dream Catchears</h1>
             </div>
+            <h2>{{Auth::user()->name}}さん、ようこそ！</h2>
         </header>
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
 
-                <a class="navbar-brand" href="#">TOP</a>
+                <a class="navbar-brand" href="/list">TOP</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
@@ -192,6 +193,18 @@
 
 
 
+<<<<<<< HEAD
+=======
+        <div class="d-flex align-items-center">
+            <form action="/list" method="get" style="margin-right: 10px;">
+                <div style="display: flex;">
+                    <input type="text" name="search" placeholder="検索したいこと入れてね♡">
+                    <input type="submit" value="検索">
+                </div>
+            </form>
+
+        </div>
+>>>>>>> origin/main
             {{-- value="{{$keyword}}"  --}}
 
 <form action="/beer/list" method="get" class="search-form-003">
@@ -238,7 +251,7 @@
                         <div id="contact-list">
 
                             {{-- 商品リストを表示 --}}
-                            @foreach ($items as $item)
+                            @foreach ($all_items as $item)
                                 <form action="/add_cart" method="post">
                                         <div class='item' style="text-align: left;">
                                             <img src="/img/{{$item->id}}/{{$item->filepath}}" width='300'>;
