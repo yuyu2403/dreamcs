@@ -91,7 +91,7 @@
                 </div>
             </nav>
             </form>
-            <div class="centered">
+            <div style="margin: 20px;" class="centered">
                 <h2>カートの中身</h2>
 
 
@@ -146,21 +146,21 @@
                         </tr>
                     </tbody>
                 </table>
-
-                    <div>
-                        <td>
+                    <div style="display: flex; gap: 50px; margin: 15px;">
                         <form action="/list">
-                            <button type="submit">買い物を続ける</button>
+                            <button class="btn btn-primary" type="submit">買い物を続ける
+                            <i class="fa-solid fa-caret-right"></i>
+                            </button>
                         </form>
-                        </td>
-                        <td>
+
+
                         <form action="/confirm">
-                            <button type="submit">購入確認画面に進む</button>
+                            <button class="btn btn-primary" type="submit">購入確認画面に進む
+                                <i class="fa-solid fa-caret-right"></i>
+                            </button>
                         </form>
-                        </td>
                     </div>
 
-            </div>
 
 
                 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
