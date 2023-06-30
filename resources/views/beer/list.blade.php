@@ -193,8 +193,7 @@
 
 
 
-<<<<<<< HEAD
-=======
+
         <div class="d-flex align-items-center">
             <form action="/list" method="get" style="margin-right: 10px;">
                 <div style="display: flex;">
@@ -204,15 +203,7 @@
             </form>
 
         </div>
->>>>>>> origin/main
-            {{-- value="{{$keyword}}"  --}}
 
-<form action="/beer/list" method="get" class="search-form-003">
-    <label>
-        <input type="text" placeholder="検索したいこと入れてね♡">
-    </label>
-    <button type="submit" class="btn btn-primary" aria-label="検索"></button>
-</form>
 
 
 
