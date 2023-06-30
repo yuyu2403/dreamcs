@@ -81,15 +81,23 @@ Route::post('/cart/delete/{id}', [CartController::class, 'delete']);
 
 
 /////////////購入確認画面///////////////////////////////////////////////////////
-Route::post(
+Route::get(
     '/confirm',
     [FinishController::class, 'confirm']
 );
 
+
 ///////////購入完了画面///////////////////////////////////////
-Route::get('/finish', function () {
-    return view('beer/finish');
-});
+Route::post(
+    '/finish',
+    [FinishController::class, 'finish']
+);
+
+// Route::get('/finish', function () {
+//     return view('beer/finish');
+// });
+
+
 
 
 
