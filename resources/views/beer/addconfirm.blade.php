@@ -37,7 +37,7 @@
     <li>
         ビール画像：
         {{-- <img src='". asset("{{$file_path}}"). "' width='300'>; --}}
-        <img src="{{ $image }}" width='300'>;
+        <img src="{{ $image }}" width='300'>
 
     </div>
 
